@@ -7,8 +7,6 @@
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import parkinglot.Car;
-import parkinglot.Engine;
 
 public class SpringApp {
 
@@ -16,20 +14,9 @@ public class SpringApp {
         // initiate application context there
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         //print all created bean names
-        printNames(context);
-    }
-
-    private static void printNames(ApplicationContext context){
-        String [] carNames = context.getBeanNamesForType(Car.class);
-        String [] engineNames = context.getBeanNamesForType(Engine.class);
-        System.out.println("Car Bean Names:");
-        for (String carName : carNames) {
-            System.out.println(carName);
+        String [] names = context.getBeanDefinitionNames();
+        for(String name: names){
+            System.out.println(name);
         }
-        System.out.println("Engine Bean Names:");
-        for (String engineName : engineNames) {
-            System.out.println(engineName);
-        }
-        System.out.println();
     }
 }
