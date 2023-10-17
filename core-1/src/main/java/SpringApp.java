@@ -7,6 +7,7 @@
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 import parkinglot.Car;
 
 public class SpringApp {
@@ -15,6 +16,12 @@ public class SpringApp {
         // initiate application context there
         ApplicationContext context = new AnnotationConfigApplicationContext("parkinglot/beans");
         //print all created bean names
+        String [] names = context.getBeanNamesForAnnotation(Component.class);
+        for (String name : names) {
+            System.out.println(name);
+        }
+        //start engine
         context.getBeansOfType(Car.class).forEach((s, car) -> car.startEngine());
     }
+
 }
