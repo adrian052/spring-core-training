@@ -3,7 +3,7 @@ package parkinglot.beans;
 
 import org.springframework.stereotype.Component;
 import parkinglot.Car;
-import parkinglot.Engine;
+import scanning.parkinglot.Engine;
 
 @Component("Bumblebee")
 public class VolkswagenBeetle implements Car {

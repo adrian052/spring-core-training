@@ -1,6 +1,6 @@
 package parkinglot.beans;
 import org.springframework.stereotype.Component;
-import parkinglot.Engine;
+import scanning.parkinglot.Engine;
 
 @Component("oldSchoolStuff")
 public class FourCylinderEngine implements Engine {
