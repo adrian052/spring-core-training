@@ -8,12 +8,19 @@
 // 7. REQUIRED CONDITION. Don't use any wiring annotations inside FordBronco & FordRaptor.
 
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import parkinglot.AppConfig;
+import parkinglot.ParkingLot;
+
 public class SpringApp {
 
     public static void main(String[] args) {
         // initiate application context there
-
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         //print all created bean names
+        ParkingLot parkingLot = (ParkingLot) context.getBean("freeParkingLot");
+        parkingLot.printCarNames();
 
     }
 }
