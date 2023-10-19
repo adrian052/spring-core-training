@@ -9,7 +9,7 @@ public class VolkswagenBeetle implements Car {
     private Engine engine;
 
 
-    public VolkswagenBeetle(@Qualifier("oldSchoolStuff") Engine engine) {
+    public VolkswagenBeetle(Engine engine) {
         this.engine = engine;
     }
     @Override
