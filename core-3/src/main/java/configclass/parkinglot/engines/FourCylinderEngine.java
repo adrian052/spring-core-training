@@ -1,9 +1,9 @@
-package parkinglot.beans;
-import org.springframework.stereotype.Component;
-import scanning.parkinglot.Engine;
+package configclass.parkinglot.engines;
 
-@Component("oldSchoolStuff")
+import org.springframework.stereotype.Component;
+
 public class FourCylinderEngine implements Engine {
+
     @Override
     public void start() {
         System.out.println("Starting Four-Cylinder Engine...");

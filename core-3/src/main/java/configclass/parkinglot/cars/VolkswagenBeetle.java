@@ -1,13 +1,14 @@
-package parkinglot.beans;
+package configclass.parkinglot.cars;
 
-
+import configclass.parkinglot.engines.Engine;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import parkinglot.Car;
-import scanning.parkinglot.Engine;
 
-@Component("Bumblebee")
 public class VolkswagenBeetle implements Car {
     private Engine engine;
+
+
     public VolkswagenBeetle(Engine engine) {
         this.engine = engine;
     }
