@@ -1,9 +1,9 @@
-package parkinglot.cars;
+package scanning.parkinglot.cars;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import scanning.parkinglot.engines.Engine;
 import org.springframework.stereotype.Component;
-import parkinglot.engines.Engine;
 
 @Component("wheelsOfDevil")
 public class ChevroletCamaro implements Car {

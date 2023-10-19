@@ -9,18 +9,20 @@
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import parkinglot.AppConfig;
-import parkinglot.FreeParkingLot;
+import configclass.parkinglot.AppConfig ;
+
+import configclass.parkinglot.FreeParkingLot;
+import configclass.parkinglot.cars.Car;
 
 public class SpringApp {
 
     public static void main(String[] args) {
         // initiate application context there
-        ApplicationContext context1 = new AnnotationConfigApplicationContext("parkinglot");
+        ApplicationContext context1 = new AnnotationConfigApplicationContext("scanning.parkinglot");
         ApplicationContext context2 = new AnnotationConfigApplicationContext(AppConfig.class);
 
         //print quantity
-        FreeParkingLot firstParkingLot = context1.getBean(FreeParkingLot.class);
+        scanning.parkinglot.FreeParkingLot firstParkingLot = context1.getBean(scanning.parkinglot.FreeParkingLot.class);
         FreeParkingLot secondParkingLot = context2.getBean(FreeParkingLot.class);
         System.out.println("Car quantity context 1:");
         firstParkingLot.printCarsCount();
@@ -39,6 +41,5 @@ public class SpringApp {
         for(String name: names2){
             System.out.println(name);
         }
-
     }
 }

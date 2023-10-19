@@ -1,8 +1,7 @@
-package parkinglot.engines;
+package configclass.parkinglot.engines;
 
 import org.springframework.stereotype.Component;
 
-@Component("powerOverwhelmingStuff")
 public class V12Engine implements Engine {
 
     @Override

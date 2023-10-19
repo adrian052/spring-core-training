@@ -1,4 +1,4 @@
-package parkinglot.engines;
+package configclass.parkinglot.engines;
 
 public interface Engine {
 

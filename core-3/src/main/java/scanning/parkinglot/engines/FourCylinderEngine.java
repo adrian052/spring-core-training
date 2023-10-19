@@ -1,4 +1,4 @@
-package parkinglot.engines;
+package scanning.parkinglot.engines;
 
 import org.springframework.stereotype.Component;
 
