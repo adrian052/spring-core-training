@@ -21,11 +21,12 @@ import static org.springframework.aop.interceptor.ExposeBeanNameAdvisors.getBean
 
 @Configuration
 public class AppConfig {
+    @Autowired
+    Map<String,Car> carMap;
     @Bean
-    public FreeParkingLot freeParkingLot(@Qualifier("carMap") Map<String,Car> carMap) {
+    public FreeParkingLot freeParkingLot() {
         return new FreeParkingLot(carMap);
     }
-
     @Bean
     public Engine powerOverwhelmingStuff() {
         return new V12Engine();
@@ -53,25 +54,12 @@ public class AppConfig {
     }
 
     @Bean("4X4")
-    public Car _4X4(@Qualifier("defaultV6Engine") Engine engine){
-        return new FordBronco(engine);
+    public Car _4X4(){
+        return new FordBronco(defaultV6Engine());
     }
 
     @Bean
-    public Car jurassicCar(@Qualifier("defaultV6Engine") Engine engine){
-        return new FordRaptor(engine);
-    }
-
-    @Bean
-    public Map<String, Car> carMap(@Qualifier("wheelsOfDevil") Car wheelsOfDevil,
-                                   @Qualifier("bumblebee") Car bumblebee,
-                                   @Qualifier("4X4") Car _4X4,
-                                   @Qualifier("jurassicCar") Car jurassicCar) {
-        return new HashMap<String, Car>() {{
-            put("wheelsOfDevil", wheelsOfDevil);
-            put("bumblebee", bumblebee);
-            put("4X4", _4X4);
-            put("jurassicCar", jurassicCar);
-        }};
+    public Car jurassicCar(){
+        return new FordRaptor(defaultV6Engine());
     }
 }

@@ -7,9 +7,7 @@ import parkinglot.engines.Engine;
 
 public class VolkswagenBeetle implements Car {
     Engine engine;
-
-    @Autowired
-    public VolkswagenBeetle(@Qualifier("oldSchoolStuff") Engine engine) {
+    public VolkswagenBeetle(Engine engine) {
         this.engine = engine;
     }
     @Override

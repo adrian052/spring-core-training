@@ -3,7 +3,6 @@ package parkinglot.engines;
 import org.springframework.stereotype.Component;
 
 
-@Component("oldSchoolStuff")
 public class FourCylinderEngine implements Engine {
 
     @Override

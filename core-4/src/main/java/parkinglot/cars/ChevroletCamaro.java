@@ -7,9 +7,6 @@ import parkinglot.engines.Engine;
 
 public class ChevroletCamaro implements Car {
     Engine engine;
-
-    @Autowired
-    @Qualifier("powerOverwhelmingStuff")
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
